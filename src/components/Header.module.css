@@ -1,0 +1,12 @@
+.header{
+    background: #a8a6a6;
+    display: flex;
+    justify-content: center;
+    /*padding para distanciar a imagem 
+    dentro do header*/
+    padding: 1.25rem 0;
+}
+
+.header img{
+    height: 2rem;
+}
