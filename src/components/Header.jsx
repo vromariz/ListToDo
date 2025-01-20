@@ -8,8 +8,8 @@ console.log(Logo);
 
 export function Header() {
     return(
-        <Header className = {styles.header}>
+        <header className = {styles.header}>
             <img src = {Logo} alt= "logo do todo-list" />
-        </Header>
+        </header>
     );
 }
