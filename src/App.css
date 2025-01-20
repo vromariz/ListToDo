@@ -1,7 +1,7 @@
 body {
   font-family: Arial;
   background-color: white;
-  padding: 30px;
+  padding: 0px;
   color: #333;
   background-image: url('./img/todo.png');
   background-position: center;
@@ -12,7 +12,7 @@ body {
   max-width: 600px;
   margin: 0 auto 300px;
   background-color: transparent;
-  padding: 20px 30px;
+  padding: 0px 30px;
   border-radius: 10px;
 }
 
