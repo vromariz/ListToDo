@@ -83,3 +83,14 @@ select {
   border-radius: 5px;
   width: 100%;
 }
+
+.todo-counter {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.todo-counter h3 {
+  margin: 0;
+  font-size: 0.80rem;
+}

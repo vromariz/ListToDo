@@ -2,7 +2,7 @@ import { useState } from "react";
 import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
 import { Header } from "./components/Header";
-import "./global.css"
+import "./global.css";
 import "./App.css";
 
 function App() {
@@ -10,52 +10,66 @@ function App() {
     {
       id: 1,
       text: "Criar o projeto todolist",
-      isComplited: false,
+      isCompleted: false,
     },
     {
       id: 2,
       text: "Ir para a academia",
-      isComplited: false,
+      isCompleted: false,
     },
     {
       id: 3,
       text: "Dormir",
-      isComplited: false,
+      isCompleted: false,
     },
   ]);
 
+  // Adicionar nova tarefa
   const addTodo = (text) => {
-
     const newTodos = [
       ...todos,
       {
         id: Math.floor(Math.random() * 10000),
         text,
-        iscompleted: false,
+        isCompleted: false,
       },
     ];
     setTodos(newTodos);
   };
 
+  // Remover tarefa
   const removeTodo = (id) => {
-    const newTodos = [...todos]
-    const filteredTodos = newTodos.filter((todo) =>
-      todo.id !== id ? todo : null
-    );
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
-  }
-
-  const completeTodo = (id) => {
-    const newTodos = [...todos]
-    newTodos.map((todo) =>
-      todo.id === id ? (todo.isCompleted = !todo.isCompleted) : todo);
-    setTodos(newTodos);
   };
+
+  // Completar ou desfazer tarefa
+  const completeTodo = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
+  // Contadores
+  const totalTodos = todos.length; // Total de tarefas criadas
+  const completedTodos = todos.filter((todo) => todo.isCompleted).length; // Total de tarefas concluídas
 
   return (
     <div className="app">
-      <Header/>
+      <Header />
       <TodoForm addTodo={addTodo} />
+
+      {/* Exibição dos contadores */}
+      <div className="todo-counter">
+        <h3>
+          Tarefas Criadas: {totalTodos}
+        </h3>
+        <h3>
+          Tarefas Concluídas: {completedTodos} de {totalTodos}
+        </h3>
+      </div>
+
       <div className="todo-list">
         {todos.map((todo) => (
           <Todo
