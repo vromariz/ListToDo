@@ -66,7 +66,7 @@ function App() {
           Tarefas Criadas: {totalTodos}
         </h3>
         <h3>
-          Tarefas Concluídas: {completedTodos} de {totalTodos}
+          Concluídas: {completedTodos} de {totalTodos}
         </h3>
       </div>
 
