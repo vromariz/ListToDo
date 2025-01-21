@@ -1,8 +1,8 @@
 body {
   font-family: Arial;
-  background-color: white;
+  background-color: var(--white-100);
   padding: 0px;
-  color: #333;
+  color: var(--white-100);
   background-image: url('./img/todo.png');
   background-position: center;
   background-size: cover;
@@ -20,10 +20,6 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  margin-bottom: 10px;
-}
-
 p {
   margin: 10px 0;
 }
@@ -33,8 +29,8 @@ input {
 }
 
 button {
-  background-color: #333974;
-  color: #fff;
+  background-color: var(--white-100);
+  color: var(--purple-200);
   padding: 5px 10px;
   margin-right: 10px;
   border: none;
@@ -51,12 +47,10 @@ button:hover {
 .todo-list {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #555;
- 
 }
 
 .todo {
-  background-color: #fff;
+  background-color:var(--gray-400);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin-bottom: 10px;
@@ -67,15 +61,17 @@ button:hover {
 }
 
 .complete {
-  background-color: #5cb85c;
+  background-color: var(--purple-200);
+  color: var(--white-100);
 }
 
 .remove {
-  background-color: #d9534f;
+  background-color: var(--gray-300);
+  color: var(--white-100);
 }
 
 .todo-form {
-  padding-bottom: 1.Srem;
+  padding-bottom: 2rem;
 }
 
 /*alteraçao no botao de criar tarefa*/

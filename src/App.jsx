@@ -2,6 +2,7 @@ import { useState } from "react";
 import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
 import { Header } from "./components/Header";
+import "./global.css"
 import "./App.css";
 
 function App() {
@@ -9,31 +10,27 @@ function App() {
     {
       id: 1,
       text: "Criar o projeto todolist",
-      category: "Trabalho",
       isComplited: false,
     },
     {
       id: 2,
       text: "Ir para a academia",
-      category: "Pessoal",
       isComplited: false,
     },
     {
       id: 3,
       text: "Dormir",
-      category: "Estudo",
       isComplited: false,
     },
   ]);
 
-  const addTodo = (text, category) => {
+  const addTodo = (text) => {
 
     const newTodos = [
       ...todos,
       {
         id: Math.floor(Math.random() * 10000),
         text,
-        category,
         iscompleted: false,
       },
     ];
@@ -58,6 +55,7 @@ function App() {
   return (
     <div className="app">
       <Header/>
+      <TodoForm addTodo={addTodo} />
       <div className="todo-list">
         {todos.map((todo) => (
           <Todo
@@ -68,7 +66,6 @@ function App() {
           />
         ))}
       </div>
-      <TodoForm addTodo={addTodo} />
     </div>
   );
 }
