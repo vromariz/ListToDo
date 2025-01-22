@@ -1,19 +1,22 @@
-import React from 'react'
+import { Circle, Trash } from "phosphor-react";
+import React from "react";
 
-const Todo = ({todo, removeTodo, completeTodo}) => {
+const Todo = ({ todo, removeTodo, completeTodo }) => {
   return (
-    <div className="todo" 
-    style={{textDecoration: todo.isCompleted ? "line-through" : ""}}
-    >
-      <div className="content">
-        <p>{todo.text}</p>
-      </div>
-      <div>
+    <div className="todo">
+      <div className="todo-content">
         <button className="complete" onClick={() => completeTodo(todo.id)}>
-          Completar
+          <Circle size={20}/>
         </button>
+        <p
+          style={{
+            textDecoration: todo.isCompleted ? "line-through" : "none",
+          }}
+        >
+          {todo.text}
+        </p>
         <button className="remove" onClick={() => removeTodo(todo.id)}>
-          x
+          <Trash size={20}/>
         </button>
       </div>
     </div>

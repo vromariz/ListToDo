@@ -1,3 +1,4 @@
+import { PlusCircle } from "phosphor-react";
 import { useState } from "react";
 
 const TodoForm = ({ addTodo }) => {
@@ -21,7 +22,7 @@ const TodoForm = ({ addTodo }) => {
         className="todo-input"
       />
       <button type="submit" className="todo-button">
-        Criar
+        Criar <PlusCircle size={19} />
       </button>
     </form>
   );

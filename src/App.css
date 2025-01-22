@@ -13,28 +13,13 @@ body {
   margin: 0 auto 300px;
   background-color: transparent;
   padding: 0px 30px;
-  border-radius: 10px;
-}
-
-h1 {
-  text-align: center;
-}
-
-p {
-  margin: 10px 10;
-}
-
-input {
-  box-sizing: border-box
 }
 
 button {
-  background-color: var(--white-100);
-  color: var(--purple-200);
   padding: 5px 10px;
   margin-right: 10px;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
   opacity: 0.8;
   transition: 0.3s;
@@ -50,50 +35,88 @@ button:hover {
 }
 
 .todo {
-  background-color:var(--gray-400);
-  box-shadow: 0 0 10px rgba(49, 49, 49, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+  background-color:var(--gray-500);
+}
 
-  padding: 5px;
-  margin-bottom: 15px;
-  border-radius: 10px;
+.todo-content {
   display: flex;
-  justify-content: space-between;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.todo p {
+  padding: 5px;
+  margin: 0;
+  flex: 1; 
+}
+
+button.complete {
+  background-color: transparent;
+  color: var(--blue-100);
+  margin-right: auto;
   align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
-.complete {
-  background-color: var(--purple-200);
-  color: var(--white-100);
+button.remove {
+  margin: 0;
+  margin-left: auto;
+  background-color: transparent;
+  color: var(--gray-200);
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
-
-.remove {
-  background-color: var(--gray-300);
-  color: var(--white-100);
-}
-
-
-/*alteraçao no botao de criar tarefa*/
 
 .todo-counter {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .todo-counter h3 {
   margin: 0;
   font-size: 0.80rem;
+  color: var(--blue-100);
+}
+
+.todo-counter h2 {
+  margin: 0;
+  font-size: 0.80rem;
+  color: var(--purple-100);
+}
+
+.counter-created {
+  padding: 2px 8px;
+  color: var(--white-100);
+  font-weight: bold;
+  background-color: var(--gray-400);
+  border-radius: 10px;
+}
+
+
+.counter-completed {
+  padding: 2px 8px;
+  color: var(--white-100);
+  font-weight: bold;
+  background-color: var(--gray-400);
+  border-radius: 10px;
 }
 
 .todo-form {
   display: flex;
   align-items: center;
-  gap: 5px; /* Espaço entre o input e o botão */
+  gap: 5px;
   margin-bottom: 60px;
 }
 
 .todo-input {
-  flex: 1; /* Faz o input ocupar o espaço restante */
+  flex: 1; 
   padding: 15px;
   font-size: 1rem;
   border: 1px solid var(--gray-400);
@@ -113,4 +136,8 @@ button:hover {
   color: var(--purple-200);
   border-radius: 8px;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0.2rem;
 }

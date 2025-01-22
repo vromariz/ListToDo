@@ -63,11 +63,14 @@ function App() {
       {/* Exibição dos contadores */}
       <div className="todo-counter">
         <h3>
-          Tarefas Criadas: {totalTodos}
+          Tarefas Criadas: <span className="counter-created">{totalTodos}</span>
         </h3>
-        <h3>
-          Concluídas: {completedTodos} de {totalTodos}
-        </h3>
+        <h2>
+          Concluídas:{" "}
+          <span className="counter-completed">
+            {completedTodos} de {totalTodos}
+          </span>
+        </h2>
       </div>
 
       <div className="todo-list">
