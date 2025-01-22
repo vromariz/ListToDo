@@ -40,18 +40,19 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
-  opacity: 1;
-}
-
 .todo-list {
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
 
+button:hover {
+  opacity: 1;
+}
+
 .todo {
   background-color:var(--gray-400);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(49, 49, 49, 0.1);
+
   padding: 5px;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -70,19 +71,8 @@ button:hover {
   color: var(--white-100);
 }
 
-.todo-form {
-  padding-bottom: 2rem;
-}
 
 /*alteraçao no botao de criar tarefa*/
-input,
-select {
-  padding: 15px;
-  margin-bottom: 10px;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  width: 100%;
-}
 
 .todo-counter {
   display: flex;
@@ -93,4 +83,34 @@ select {
 .todo-counter h3 {
   margin: 0;
   font-size: 0.80rem;
+}
+
+.todo-form {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espaço entre o input e o botão */
+  margin-bottom: 60px;
+}
+
+.todo-input {
+  flex: 1; /* Faz o input ocupar o espaço restante */
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid var(--gray-400);
+  border-radius: 6px;
+  background-color: var(--gray-400);
+  border: 1px solid #000000;
+  color: var(--white-100);
+  margin: 0;
+  
+}
+
+.todo-button {
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 1rem;
+  background-color: var(--white-100);
+  color: var(--purple-200);
+  border-radius: 8px;
+  cursor: pointer;
 }

@@ -5,23 +5,25 @@ const TodoForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!value) return;
+    if (!value.trim()) return;
     addTodo(value);
     setValue("");
   };
 
+
   return (
-    <div className="todo-form">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Adicionar uma nova tarefa"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button type="submit">Criar +</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="todo-form">
+      <input
+        type="text"
+        placeholder="Adicionar uma nova tarefa"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        className="todo-input"
+      />
+      <button type="submit" className="todo-button">
+        Criar
+      </button>
+    </form>
   );
 };
 
