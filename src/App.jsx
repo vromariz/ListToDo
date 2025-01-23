@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ClipboardText } from "phosphor-react"; 
 import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
 import { Header } from "./components/Header";
@@ -24,7 +25,6 @@ function App() {
     },
   ]);
 
-  // Adicionar nova tarefa
   const addTodo = (text) => {
     const newTodos = [
       ...todos,
@@ -37,13 +37,12 @@ function App() {
     setTodos(newTodos);
   };
 
-  // Remover tarefa
+
   const removeTodo = (id) => {
     const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
   };
 
-  // Completar ou desfazer tarefa
   const completeTodo = (id) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
@@ -51,16 +50,15 @@ function App() {
     setTodos(updatedTodos);
   };
 
-  // Contadores
-  const totalTodos = todos.length; // Total de tarefas criadas
-  const completedTodos = todos.filter((todo) => todo.isCompleted).length; // Total de tarefas concluídas
+
+  const totalTodos = todos.length; 
+  const completedTodos = todos.filter((todo) => todo.isCompleted).length; 
 
   return (
     <div className="app">
       <Header />
       <TodoForm addTodo={addTodo} />
 
-      {/* Exibição dos contadores */}
       <div className="todo-counter">
         <h3>
           Tarefas Criadas: <span className="counter-created">{totalTodos}</span>
@@ -73,16 +71,26 @@ function App() {
         </h2>
       </div>
 
-      <div className="todo-list">
-        {todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            todo={todo}
-            removeTodo={removeTodo}
-            completeTodo={completeTodo}
-          />
-        ))}
-      </div>
+      {todos.length === 0 ? (
+        <div className="empty-state">
+          <ClipboardText size={64} weight="light" className="empty-icon" /> 
+          <p className="empty-message">Você ainda não tem tarefas cadastradas</p>
+          <p className="empty-instruction">
+            Crie tarefas e organize seus itens a fazer
+          </p>
+        </div>
+      ) : (
+        <div className="todo-list">
+          {todos.map((todo) => (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              removeTodo={removeTodo}
+              completeTodo={completeTodo}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
